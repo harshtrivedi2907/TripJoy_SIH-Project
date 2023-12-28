@@ -1,0 +1,87 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display OSM Data</title>
+    <link rel="stylesheet" href="script.css" />
+    <style>
+        #map {
+            height: 80vh;
+        }
+        .blue-btn {
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .container{
+          margin-top: 2rem;
+        }
+
+        .blue-btn:hover {
+            background-color: darkblue;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/geolocation@2.0/dist/geolocation.min.js"></script>
+
+</head>
+<body>
+    <h1>OpenStreetMap Data</h1>
+    <div id="map"></div>
+    <div class="container"><a href="mapOnline.html"><button  class="blue-btn">Online Map</button></a>
+</div>
+    
+    <!-- Include Leaflet JavaScript -->
+    <script src="map1.js"></script>
+
+    <!-- Include osmtogeojson library -->
+    <script src="map2.js"></script>
+    <script src="https://unpkg.com/leaflet-gps@2.1.1/dist/leaflet-gps.min.js"></script>
+
+    <!-- Convert OSM to GeoJSON -->
+    <script>
+        // Replace 'path/to/your/osm/file.osm' with the actual path to your OSM file
+        const osmData = `"./map.osm"`; // OSM data as a string
+        const geojsonData = osmtogeojson(osmData);
+    </script>
+
+    <!-- Create and display the map -->
+    <script>
+        var map = L.map('map').setView([0, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        var geoJsonLayer = L.geoJSON(geojsonData).addTo(map);
+
+    </script>
+
+    <script>
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+      
+          // Update Mapbox map with user's location:
+          const map = { // your Mapbox map object
+            setCenter([latitude, longitude]);
+            // Add user location marker or customize display
+          };
+        });
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+      </script>
+     
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

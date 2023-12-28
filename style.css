@@ -1,0 +1,342 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+/* ... (previous styles) ... */
+
+.hero {
+  background-image: url("/images/Background1.jpg");
+
+  background-size: cover;
+    background-position: center;
+  height: 80vh; /* Set to 80% of viewport height */
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+nav.scrolled {
+  background-color: #000;
+}
+
+.hero-content {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.hero-content img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 50%;
+  opacity: 0.75;
+}
+
+.enquiry-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4a2902; /* Button background color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 3rem;
+}
+
+.enquiry-button:hover {
+  background-color: #fdfeff6c; /* Button background color on hover */
+  color: #470101;
+}
+.navbar {
+  background-color: rgba(0, 0, 0, 0.461);
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-repeat: repeat;
+}
+.main {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Hamburger menu icon */
+.mobile-menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Media query for small screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+/* ... (previous styles) ... */
+
+.user-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.login-button,
+.signup-button {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  margin-left: 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover,
+.signup-button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* ... (media query for small screens) ... */
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* Tour package styles */
+.tour-packages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.package {
+  width: calc(23%);
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+
+.package img {
+  max-width: 90%;
+  height: auto;
+  max-height: 350px; /* Set max height for the images */
+}
+
+.package p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .tour-packages {
+    flex-direction: column;
+  }
+
+  /* .package {
+    
+  } */
+}
+
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+/* Service card styles */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.service-card {
+  width: calc(23%); /* Adjust card width as needed */
+  margin: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.2s;
+  overflow: hidden; /* Ensure text doesn't overflow */
+}
+
+.service-card img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px; /* Adjust the maximum image height */
+}
+
+.service-card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #666;
+  padding: 10px 0;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 80%;
+   
+  }
+
+  .tour-packages {
+    text-align: center; /* Center-align content on smaller screens */
+}
+
+/* Adjust styles for tour cards or items */
+.package {
+    width: 80%; /* Make tour cards 80% of the container width */
+    margin: 0 auto; /* Center-align tour cards */
+    margin-bottom: 20px; /* Add some spacing between tour cards */
+}
+.contact-container{
+  flex-direction: column;
+  align-items: center;
+}
+.contact-details,
+.address,
+.business-hours {
+
+  width: 75%;
+}
+}
+/* Container for contact sections */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+/* Style for each contact section */
+.contact-details,
+.address,
+.business-hours {
+  flex-basis: calc(
+    33.33% - 20px
+  ); 
+  
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+

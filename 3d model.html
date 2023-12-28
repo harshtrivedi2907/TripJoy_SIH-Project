@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dome of the Rock 3D Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(223, 232, 233);
+        }
+
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #a9b96b;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #content {
+            text-align: center;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            height: 480px;
+        }
+
+        .timeline {
+            margin-top: 40px;
+            text-align: left;
+            border-top: 2px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .timeline h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #333;
+            transform: translate(-50%, -50%);
+        }
+
+        .timeline-item strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .reviews {
+            margin-top: 40px;
+            text-align: left;
+            border-top: 2px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .reviews h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .review-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .review-item strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .booking {
+            margin-top: 40px;
+            text-align: left;
+            border-top: 2px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .booking h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .booking-form label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .booking-form input[type="datetime-local"] {
+            padding: 8px;
+            margin-bottom: 20px;
+            width: 250px;
+        }
+
+        .booking-form input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .booking-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .time-schedule,
+        .reviews,
+        .booking {
+            width: 100%;
+            margin-top: 40px;
+            border-top: 2px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .time-schedule h2,
+        .reviews h2,
+        .booking h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body bgcolor="khaki">
+    <div id="container">
+        <h1>Dome of the Rock 3D Model</h1>
+        <div id="content">
+            <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/0e9f985497cd4cd5a089fea2733bb3e6/embed"></iframe>
+            <p>This is a 3D model of the Dome of the Rock.</p>
+            <p>The Dome of the Rock is an Islamic shrine located on the Temple Mount in the Old City of Jerusalem.</p>
+            <p>It was completed in 691 CE and is a significant architectural and religious landmark.</p>
+
+            <div class="timeline">
+                <h2>Timeline</h2>
+                <div class="timeline-item">
+                    <strong>691 CE:</strong> Construction completed.
+                </div>
+                <div class="timeline-item">
+                    <strong>Present:</strong> Open to visitors at specified times.
+                </div>
+                <div class="timeline-item">
+                    <strong>Various periods:</strong> Closed for renovations and historical events.
+                </div>
+            </div>
+
+            <div class="reviews">
+                <h2>Reviews</h2>
+                <div class="review-item">
+                    <strong>John Doe:</strong> "The model accurately represents the stunning architecture of the Dome of the Rock."
+                </div>
+                <div class="review-item">
+                    <strong>Jane Smith:</strong> "Impressive model! Great addition for educational purposes."
+                </div>
+            </div>
+
+            <div class="time-schedule">
+                <h2>Visiting Hours</h2>
+                <div class="schedule-item">
+                    <strong>Mondays to Thursdays:</strong> 8:00 AM - 10:00 PM
+                </div>
+                <div class="schedule-item">
+                    <strong>Fridays:</strong> 8:00 AM - 11:00 AM, 1:30 PM - 10:00 PM
+                </div>
+                <div class="schedule-item">
+                    <strong>Saturdays:</strong> Closed
+                </div>
+                <div class="schedule-item">
+                    <strong>Sundays:</strong> 8:00 AM - 10:00 PM
+                </div>
+            </div>
+
+            <!-- Booking section -->
+            <div class="booking">
+                <h2>Book Your Visit</h2>
+                <div class="booking-form">
+                    <label for="booking-time">Select a time slot:</label>
+                    <input type="datetime-local" id="booking-time" name="booking-time">
+                    <input type="submit" value="Book">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

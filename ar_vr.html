@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body{
+            background-color: black;
+            margin: auto;
+            justify-content: center;
+        }
+        #slider-container {
+            width: 100vh;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        #prevBtn, #nextBtn {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 40px; /* Adjust the width as needed */
+            height: 40px; /* Ensure the height matches the width for a round button */
+            background-color: lightblue; /* Set the background color to light blue */
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%; /* Make the button round */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+        #nextBtn {
+            right: 22.5%;
+        }
+
+        #prevBtn:hover, #nextBtn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div id="slider-container">
+    <div id="slider"> 
+        <div class="slide">
+            <iframe width="1000" height="1000" data-original-width="1000" data-original-height="750" src="https://www.thinglink.com/view/scene/1793740080649601701" type="text/html" style="border: none;"  scrolling="no"></iframe><script async src="//cdn.thinglink.me/jse/responsive.js"></script>
+        </div>
+        <div class="slide">
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1703048562761!6m8!1m7!1sCAoSLEFGMVFpcE1sVDFLSlo5VTdzMmNTYTNnMFp3SGpnSTBGck5OZ19mVWdtUkh2!2m2!1d23.0062573!2d72.60255029999999!3f22.45938979357748!4f-20.136346047203887!5f0.7820865974627469" width="1000" height="750" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="slide">
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1703050848924!6m8!1m7!1sCAoSLEFGMVFpcE0yeDhBQXUweGxic2lWa19ZbEtzdGlPMXdZQlNGWmRFZG55OFNi!2m2!1d34.092203851228!2d74.853445038623!3f2.866775!4f0!5f0.7820865974627469" width="1000" height="750" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+       
+    </div>
+    <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
+    <button id="nextBtn" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script>
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        currentSlide = index;
+
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        const translateValue = -currentSlide * 100 + '%';
+        slider.style.transform = `translateX(${translateValue})`;
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+</script>
+
+</body>
+</html>
